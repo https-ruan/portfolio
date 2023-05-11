@@ -6,6 +6,26 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Fira Code", sans-serif;
+  color: $white;
+
+  // Firefox
+  scrollbar-width: thin;
+
+  /* Chrome, Edge, and Safari */
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $light-blue;
+    border-radius: 4px;
+    border: 0;
+  }
 }
 
 html,
@@ -14,10 +34,15 @@ body {
   flex-direction: column;
   height: 100%;
   background-color: $medium-blue;
+  scroll-behavior: smooth;
 }
 
 app-root {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+a {
+  text-decoration: none;
 }
