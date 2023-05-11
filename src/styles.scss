@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Code", sans-serif;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: $medium-blue;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
