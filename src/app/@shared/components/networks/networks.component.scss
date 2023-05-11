@@ -1,0 +1,57 @@
+@import "variables";
+
+@mixin line($width: 30px, $height: 1.6px) {
+  width: $width;
+  height: $height;
+  background-color: $light-blue;
+}
+
+:host {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  display: flex;
+}
+
+#h-line {
+  display: block;
+  @include line;
+}
+
+#main-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -9px;
+
+  #v-line {
+    display: block;
+    @include line(1.6px, 280px);
+    margin-bottom: 10px;
+  }
+
+  #networks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    a {
+      display: flex;
+
+      svg,
+      svg path {
+        @include transition(0.4s);
+      }
+
+      &:hover {
+        svg {
+          scale: 1.2;
+          path {
+            fill: yellow;
+          }
+        }
+      }
+    }
+  }
+}

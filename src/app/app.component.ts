@@ -12,6 +12,7 @@ import { HeaderComponent } from '@shared/components/header/header.component';
   selector: 'app-root',
   template: `
     <app-header container />
+    <app-networks></app-networks>
     <router-outlet></router-outlet>
     <app-footer />
   `,

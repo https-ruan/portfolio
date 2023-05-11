@@ -4,8 +4,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContainerDirective } from './directives/container/container.directive';
 import { RouterModule } from '@angular/router';
+import { NetworksComponent } from './components/networks/networks.component';
 
-const standaloneComponents = [HeaderComponent, FooterComponent];
+const standaloneComponents = [
+  HeaderComponent,
+  NetworksComponent,
+  FooterComponent,
+];
 
 const directives = [ContainerDirective];
 
