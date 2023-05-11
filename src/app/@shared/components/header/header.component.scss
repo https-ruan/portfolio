@@ -1,0 +1,88 @@
+@import "variables";
+
+:host {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  background-color: $medium-blue;
+  @include transition;
+
+  &.shadow {
+    box-shadow: 0px 10px 20px -8px rgba(0, 0, 0, 0.35);
+  }
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  #logo {
+    h1 {
+      font-size: 1.875rem;
+    }
+
+    span {
+      &.typing {
+        letter-spacing: 8px;
+      }
+
+      // * BUG fix
+      &:first-child {
+        letter-spacing: 0.1px;
+      }
+
+      &:not(.typing) {
+        color: $yellow;
+      }
+    }
+  }
+
+  #links {
+    display: flex;
+    gap: 2rem;
+
+    a {
+      position: relative;
+      opacity: 0.5;
+      @include transition;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 2px;
+        width: 0;
+        background-color: $yellow;
+        bottom: -4px;
+        @include transition;
+      }
+
+      &::after {
+        content: "()";
+      }
+
+      &:hover,
+      &.active {
+        opacity: 1;
+
+        &::before {
+          width: 1.5rem;
+        }
+
+        &::after {
+          color: $yellow;
+        }
+
+        &:is(.active):hover {
+          opacity: 0.8;
+
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
