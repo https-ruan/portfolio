@@ -14,7 +14,7 @@ import { HeaderComponent } from '@shared/components/header/header.component';
     <app-header container />
     <app-networks></app-networks>
     <router-outlet></router-outlet>
-    <app-footer />
+    <app-footer container />
   `,
 })
 export class AppComponent {
