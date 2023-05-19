@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ContainerDirective } from './directives/container/container.directive';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NetworksComponent } from './components/networks/networks.component';
+import {
+  FooterComponent,
+  HeaderComponent,
+  NetworksComponent,
+} from './components';
+import { TypeofPipe } from './pipes';
 
 const standaloneComponents = [
   HeaderComponent,
@@ -12,11 +14,11 @@ const standaloneComponents = [
   FooterComponent,
 ];
 
-const directives = [ContainerDirective];
+const pipes = [TypeofPipe];
 
 @NgModule({
-  declarations: [...directives],
-  imports: [CommonModule, ...standaloneComponents, RouterModule],
-  exports: [...standaloneComponents, ...directives],
+  declarations: [...pipes],
+  imports: [CommonModule, RouterModule, ...standaloneComponents],
+  exports: [...standaloneComponents, ...pipes],
 })
 export class SharedModule {}

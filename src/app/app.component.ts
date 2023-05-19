@@ -11,10 +11,10 @@ import { HeaderComponent } from '@shared/components/header/header.component';
 @Component({
   selector: 'app-root',
   template: `
-    <app-header container />
+    <app-header class="container" />
     <app-networks></app-networks>
     <router-outlet></router-outlet>
-    <app-footer container />
+    <app-footer class="container" />
   `,
 })
 export class AppComponent {

@@ -41,8 +41,34 @@ app-root {
   display: flex;
   flex-direction: column;
   flex: 1;
+  overflow: hidden;
 }
 
 a {
   text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Grid Classes */
+.container {
+  display: block;
+  padding: 40px 80px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-cv {
+  align-items: center;
+}
+
+.flex-ch {
+  justify-content: center;
 }
