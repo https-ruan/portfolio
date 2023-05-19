@@ -6,6 +6,7 @@
   align-items: center;
   min-height: calc(100vh - 120px);
   border-bottom: 2px solid $yellow;
+  overflow-x: hidden;
 
   ::ng-deep {
     .code-line {

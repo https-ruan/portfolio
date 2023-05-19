@@ -9,7 +9,7 @@ import { picture, whoAmI } from './animations/animations';
   animations: [whoAmI, picture],
 })
 export class WelcomeComponent {
-  public myself: any = Constants.myself;
+  public myself: any = Constants.myself.resume;
   public photoIsOpen = false;
 
   constructor(private readonly _r2: Renderer2) {}
