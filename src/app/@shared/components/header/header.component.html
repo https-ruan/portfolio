@@ -1,3 +1,14 @@
+<!-- Templates -->
+<ng-template #link let-routerLink="routerLink" let-name="name">
+  <a
+    [routerLink]="routerLink"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    translate
+    >{{ name }}</a
+  >
+</ng-template>
+
 <header class="container">
   <a routerLink="/" id="logo">
     <ngx-typed-js [strings]="['Ruan']" [typeSpeed]="100" [showCursor]="false">
@@ -10,34 +21,15 @@
   </a>
 
   <div id="links">
-    <a
-      routerLink="/"
-      fragment="about"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="linkActivateOptions"
-      #rla="routerLinkActive"
-      >sobre</a
-    >
-    <a
-      routerLink="/"
-      fragment="experience"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="linkActivateOptions"
-      >experiencia</a
-    >
-    <a
-      routerLink="/"
-      fragment="skills"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="linkActivateOptions"
-      >habilidades</a
-    >
-    <a
-      routerLink="/"
-      fragment="projects"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="linkActivateOptions"
-      >projetos</a
-    >
+    <ng-container *ngFor="let route of routes; index as idx">
+      <ng-container
+        *ngIf="idx !== routes.length - 1"
+        [ngTemplateOutlet]="link"
+        [ngTemplateOutletContext]="{
+          routerLink: route.path,
+          name: route.data ? route.data['pageName'] : route.path
+        }"
+      ></ng-container>
+    </ng-container>
   </div>
 </header>

@@ -1,9 +1,19 @@
+import { marker } from '@colsen1991/ngx-translate-extract-marker';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 
-const routes: Routes = [
-  { path: '', component: HomeComponent },
+export const routes: Routes = [
+  {
+    path: '',
+    loadComponent: () =>
+      import('./home/home.component').then((c) => c.HomeComponent),
+    data: { pageName: marker('home') },
+  },
+  {
+    path: marker('about'),
+    loadComponent: () =>
+      import('./about/about.component').then((c) => c.AboutComponent),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
