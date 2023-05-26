@@ -1,7 +1,7 @@
 <footer class="container">
   <div id="main">
     <div class="card">
-      <h2>me envie</h2>
+      <h2 translate>send me</h2>
 
       <a
         href="https://api.whatsapp.com/send?phone=5511966095097&text=Ol%C3%A1%20Ruan,%20estava%20navegando%20em%20seu%20portf%C3%B3lio%20e%20decidi%20enviar%20uma%20mensagem%20:)"
@@ -22,13 +22,13 @@
           />
         </svg>
 
-        <span>uma mensagem</span>
+        <span translate>a message</span>
       </a>
       <a
         href="mailto:ruands2002@gmail.com?subject=By%20portfolio"
         target="_blank"
       >
-        <span>um e-mail</span>
+        <span translate>an e-mail</span>
         <svg
           width="12"
           height="12"
@@ -44,13 +44,15 @@
       </a>
     </div>
 
-    <p>
-      Eu sou <span>Ruan Araújo</span>, web designer / desenvolvedor front-end e
-      esse é meu <span>portfólio</span>. Espero que você tenha gostado! 🙂
-    </p>
+    <p
+      [innerHTML]="
+        'I\'m <span>#myName#</span>, web designer / front-end developer and this is my <span>portfolio</span>. I hope you liked it! 🙂'
+          | translate : { myName: myself.resume.name }
+      "
+    ></p>
 
     <div class="card">
-      <h2>conecte-se via</h2>
+      <h2 translate>connect by</h2>
 
       <a href="https://www.linkedin.com/in/araujo-ruan/" target="_blank">
         <span>linkedin</span>
@@ -87,7 +89,10 @@
     </div>
   </div>
 
-  <small id="rights-reserved"
-    >© {{ currentYear }} Todos os direitos reservados.</small
+  <small
+    id="rights-reserved"
+    translate
+    [translateParams]="{ currentYear: currentYear }"
+    >© #currentYear# All rights reserved.</small
   >
 </footer>

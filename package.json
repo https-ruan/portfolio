@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "commit": "cz",
-    "i18n:extract": "ngx-translate-extract  --input ./src -o ./src/assets/translations/pt-BR.json ./src/assets/translations/en-US.json --sort --format namespaced-json --clean"
+    "i18n:extract": "ngx-translate-extract  --input ./src -o ./src/assets/translations/pt-BR.json ./src/assets/translations/en-US.json --sort --format --clean"
   },
   "private": true,
   "dependencies": {
