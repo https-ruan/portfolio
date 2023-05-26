@@ -6,7 +6,8 @@
     "start": "ng serve --open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "i18n:extract": "ngx-translate-extract  --input ./src --output ./src/@core/i18n/{en-US,pt-BR}.json --sort"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +20,8 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
     "ngx-typed-js": "^2.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -28,7 +31,11 @@
     "@angular-devkit/build-angular": "^16.0.1",
     "@angular/cli": "~16.0.1",
     "@angular/compiler-cli": "^16.0.0",
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
     "@types/jasmine": "~4.3.0",
+    "@vendure/ngx-translate-extract": "^8.1.1",
+    "husky": "^8.0.3",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
