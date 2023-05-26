@@ -11,6 +11,7 @@
   left: 0;
   top: 60px;
   display: flex;
+  z-index: 999;
 }
 
 #h-line {
@@ -36,7 +37,8 @@
     align-items: center;
     gap: 10px;
 
-    a {
+    a,
+    button {
       display: flex;
 
       svg,
@@ -47,9 +49,22 @@
       &:hover {
         svg {
           scale: 1.2;
-          path {
+        }
+
+        &:not(#lang-selector) {
+          svg path {
             fill: yellow;
           }
+        }
+      }
+
+      &#lang-selector {
+        position: relative;
+
+        #brazil,
+        #usa {
+          position: absolute;
+          top: 160%;
         }
       }
     }

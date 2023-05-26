@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ELanguages } from '@core/i18n';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-networks',
@@ -8,4 +10,19 @@ import { Component } from '@angular/core';
   templateUrl: './networks.component.html',
   styleUrls: ['./networks.component.scss'],
 })
-export class NetworksComponent {}
+export class NetworksComponent {
+  public languages = ELanguages;
+  public get currentLng() {
+    return this._translateService.currentLang;
+  }
+
+  constructor(private readonly _translateService: TranslateService) {}
+
+  public changeLng(): void {
+    if (this.currentLng === ELanguages.ptBR) {
+      this._translateService.use(ELanguages.enUS);
+    } else {
+      this._translateService.use(ELanguages.ptBR);
+    }
+  }
+}
