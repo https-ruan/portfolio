@@ -6,15 +6,17 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ELanguages } from '@core/i18n';
+import { TranslateService } from '@ngx-translate/core';
 import { HeaderComponent } from '@shared/components/header/header.component';
 
 @Component({
   selector: 'app-root',
   template: `
-    <app-header class="container" />
+    <app-header />
     <app-networks></app-networks>
     <router-outlet></router-outlet>
-    <app-footer class="container" />
+    <app-footer />
   `,
 })
 export class AppComponent {
@@ -23,9 +25,12 @@ export class AppComponent {
 
   constructor(
     private readonly _titleService: Title,
-    private readonly r2: Renderer2
+    private readonly _r2: Renderer2,
+    private readonly _translateService: TranslateService
   ) {
     this.dynamicTitle();
+
+    _translateService.use(ELanguages.ptBR);
   }
 
   private dynamicTitle() {
@@ -53,12 +58,12 @@ export class AppComponent {
 
   @HostListener('window:scroll', ['$event']) private onScroll(e: Event): void {
     const window = (e.target as Document).defaultView as Window;
-    const header = this.header.nativeElement;
+    const header = this.header.nativeElement as HTMLElement;
 
-    if (!window.scrollY) {
-      this.r2.removeClass(header, 'shadow');
+    if (window.scrollY > header.offsetHeight) {
+      this._r2.addClass(header, 'show-button');
     } else {
-      this.r2.addClass(header, 'shadow');
+      this._r2.removeClass(header, 'show-button');
     }
   }
 }
