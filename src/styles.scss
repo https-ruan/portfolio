@@ -88,9 +88,20 @@ a {
 }
 
 /* Grid Classes */
+$aside-padding: 80px;
+$tb-padding: 40px;
+
 .container {
   display: block;
-  padding: 40px 80px;
+  padding: $tb-padding $aside-padding;
+  max-width: 1366px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+  &-section {
+    min-height: 100vh;
+  }
 }
 
 .flex {

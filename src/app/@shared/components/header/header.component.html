@@ -1,11 +1,6 @@
-<header>
+<header class="container">
   <a routerLink="/" id="logo">
-    <ngx-typed-js
-      [strings]="['Juan', 'Rhuan', 'Ruan']"
-      [backSpeed]="100"
-      [typeSpeed]="100"
-      [showCursor]="false"
-    >
+    <ngx-typed-js [strings]="['Ruan']" [typeSpeed]="100" [showCursor]="false">
       <h1>
         <span><</span>
         <span class="typing"></span>
@@ -15,9 +10,34 @@
   </a>
 
   <div id="links">
-    <a routerLink="/" fragment="about" class="active">sobre</a>
-    <a routerLink="/" fragment="experience">experiencia</a>
-    <a routerLink="/" fragment="skills">habilidades</a>
-    <a routerLink="/" fragment="projects">projetos</a>
+    <a
+      routerLink="/"
+      fragment="about"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="linkActivateOptions"
+      #rla="routerLinkActive"
+      >sobre</a
+    >
+    <a
+      routerLink="/"
+      fragment="experience"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="linkActivateOptions"
+      >experiencia</a
+    >
+    <a
+      routerLink="/"
+      fragment="skills"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="linkActivateOptions"
+      >habilidades</a
+    >
+    <a
+      routerLink="/"
+      fragment="projects"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="linkActivateOptions"
+      >projetos</a
+    >
   </div>
 </header>

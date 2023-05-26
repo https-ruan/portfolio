@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { IsActiveMatchOptions, RouterModule } from '@angular/router';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 
 @Component({
@@ -12,4 +12,10 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
 })
 export class HeaderComponent {
   public showCursor = true;
+  public linkActivateOptions: IsActiveMatchOptions = {
+    fragment: 'exact',
+    matrixParams: 'ignored',
+    paths: 'exact',
+    queryParams: 'ignored',
+  };
 }

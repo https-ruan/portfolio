@@ -6,7 +6,8 @@
 
 #main {
   display: flex;
-  gap: 100px;
+  align-items: center;
+  justify-content: space-between;
 
   #presentation {
     display: flex;
