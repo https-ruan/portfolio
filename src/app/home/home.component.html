@@ -106,12 +106,7 @@
     </div>
 
     <div id="who-am-i">
-      <button
-        *ngIf="!photoIsOpen"
-        (click)="showMe($any($event.target))"
-        @whoAmI
-        translate
-      >
+      <button *ngIf="!photoIsOpen" (click)="showMe()" @whoAmI translate>
         Who am I?
       </button>
 
@@ -120,7 +115,7 @@
 
         <div id="wrapper">
           <div id="border"></div>
-          <img src="assets/welcome/ruan.png" alt="Ruan's picture" />
+          <img src="assets/home/ruan.png" alt="Ruan's picture" />
         </div>
 
         <b id="picture-footer" (click)="playMarioSound($any($event.target))">
@@ -185,7 +180,7 @@
               </clipPath>
             </defs>
           </svg>
-          <img id="point-up" src="assets/welcome/1up.png" alt="1 up" />
+          <img id="point-up" src="assets/home/1up.png" alt="1 up" />
         </b>
       </div>
     </div>

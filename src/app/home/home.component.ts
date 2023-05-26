@@ -17,8 +17,8 @@ export class HomeComponent {
 
   constructor(private readonly _r2: Renderer2) {}
 
-  public showMe(button: HTMLButtonElement) {
-    const runningSound = new Audio('assets/welcome/running.mp3');
+  public showMe() {
+    const runningSound = new Audio('assets/home/running.mp3');
     runningSound.play();
     this.photoIsOpen = true;
   }
@@ -37,7 +37,7 @@ export class HomeComponent {
       `translate(${x}px, ${y % 2 !== 0 ? -y : y}px)`
     );
 
-    const coinSound = new Audio('assets/welcome/mario-coin.mp3');
+    const coinSound = new Audio('assets/home/mario-coin.mp3');
     coinSound.play();
 
     setTimeout(() => {
