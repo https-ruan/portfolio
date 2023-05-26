@@ -3,10 +3,10 @@ import { age } from '@shared/functions';
 
 export const myself = Object.freeze({
   resume: {
-    name: 'Ruan Araújo',
+    name: marker('Ruan Araújo'),
     age: age('08-20-2002'),
     role: marker('Front-end Developer'),
-    currentJob: 'IBM',
+    currentJob: marker('IBM'),
     description: marker('Welcome to my portfolio! 🙂'),
   },
   yearsExperience: 3,
@@ -14,3 +14,10 @@ export const myself = Object.freeze({
   workedProjects: 12,
   hobbies: [marker('Musics'), marker('Films and Series'), marker('Games')],
 });
+
+marker('myself');
+marker('name');
+marker('age');
+marker('role');
+marker('currentJob');
+marker('description');

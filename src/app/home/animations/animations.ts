@@ -8,12 +8,14 @@ import {
 
 export const whoAmI = trigger('whoAmI', [
   transition(':leave', [
+    style({
+      position: 'relative',
+    }),
     animate(
       '1s 600ms',
       keyframes([
         style({
           rotate: '-25deg',
-          position: 'relative',
           left: 0,
           offset: 0.3,
         }),

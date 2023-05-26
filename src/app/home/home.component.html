@@ -8,10 +8,10 @@
   <ngx-typed-js
     [strings]="[
       '<span class=\'attr-color\'>' +
-        attribute +
+        (attribute | translate) +
         ':</span> ' +
         (quotes ? '&quot;' : '') +
-        myself[attribute] +
+        (myself[attribute] | translate) +
         (quotes ? '&quot;' : '') +
         '<span class=\'attr-color\'>,</span>'
     ]"
@@ -77,7 +77,9 @@
       <p id="code-block">
         <ngx-typed-js
           [strings]="[
-            '<span class=\'reserved-color\'>const</span> myself <span class=\'reserved-color\'>=</span> &#123;'
+            '<span class=\'reserved-color\'>const</span> ' +
+              ('myself' | translate) +
+              ' <span class=\'reserved-color\'>=</span> &#123;'
           ]"
           [showCursor]="false"
         >
@@ -108,12 +110,13 @@
         *ngIf="!photoIsOpen"
         (click)="showMe($any($event.target))"
         @whoAmI
+        translate
       >
-        Quem sou eu?
+        Who am I?
       </button>
 
       <div id="picture" *ngIf="photoIsOpen" @picture>
-        <b id="picture-header">Esse sou eu</b>
+        <b id="picture-header" translate>It's me</b>
 
         <div id="wrapper">
           <div id="border"></div>
@@ -121,7 +124,7 @@
         </div>
 
         <b id="picture-footer" (click)="playMarioSound($any($event.target))">
-          <small>mas não o Mario...</small>
+          <small>{{ "but not" | translate }} Mario...</small>
           <svg
             width="14"
             height="12"
@@ -189,7 +192,7 @@
   </div>
 
   <div id="epic-phrase">
-    <p>Seja a mudança que você quer ver no mundo! 🌎</p>
+    <p translate>Be the change you want to see in the world! 🌎</p>
     <strong>Mahatma Gandhi</strong>
   </div>
 </section>
