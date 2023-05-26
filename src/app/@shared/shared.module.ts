@@ -1,12 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { NgxTypedJsModule } from 'ngx-typed-js';
 import {
   FooterComponent,
   HeaderComponent,
   NetworksComponent,
 } from './components';
 import { TypeofPipe } from './pipes';
+
+const coreModules = [
+  CommonModule,
+  RouterModule,
+  TranslateModule,
+  NgxTypedJsModule,
+];
 
 const standaloneComponents = [
   HeaderComponent,
@@ -18,7 +27,7 @@ const pipes = [TypeofPipe];
 
 @NgModule({
   declarations: [...pipes],
-  imports: [CommonModule, RouterModule, ...standaloneComponents],
-  exports: [...standaloneComponents, ...pipes],
+  imports: [...coreModules, ...standaloneComponents],
+  exports: [...coreModules, ...standaloneComponents, ...pipes],
 })
 export class SharedModule {}
