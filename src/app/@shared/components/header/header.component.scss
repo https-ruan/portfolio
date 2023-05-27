@@ -1,13 +1,5 @@
 @import "variables";
-
-// Header button preset
-@mixin line-preset {
-  display: inline-block;
-  width: 24px;
-  height: 3px;
-  background-color: $white;
-  border-radius: 4px;
-}
+@import "grid";
 
 :host {
   width: 100%;
@@ -24,10 +16,7 @@
 }
 
 header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include container-flex(row, center, space-between);
 
   #logo {
     h1 {
@@ -95,8 +84,5 @@ header {
         }
       }
     }
-  }
-
-  #show-header {
   }
 }

@@ -1,25 +1,24 @@
-<section class="container container-section">
-  <h2 class="title">sobre</h2>
+<section id="about">
+  <h2 translate>about</h2>
 
-  <div id="main" class="flex flex-cv">
+  <div id="main" class="aside-line left">
     <div id="presentation">
-      <p>
-        Apaixonado por tecnologia desde infância onde tive meu primeiro contato
-        e desde então nunca mais parei.
-        <br /><br />
-        Sou um jovem que procura aumentar cada vez mais a expertise no mundo do
-        desenvolvimento, com a meta de conseguir fazer a diferença nos projetos
-        que atuo e na vida das pessoas que encontro nessa jornada.
-        <br /><br />
-        Assim como a tecnologia mudou a minha vida eu acredito que consigo
-        usa-la para gerar muito valor positivo por aí. 😋
-      </p>
+      <p
+        [innerHTML]="
+          'Passionate about technology since a childhood where I had my first
+        contact contact and since then I have never stopped.<br /><br />
 
-      <a
-        href="assets/about/cv-ruan-araujo.pdf"
-        download
-        class="outline cv-download"
-      >
+        I am a young man who seeks to increase more and more the expertise in
+        the world of world of development, with the goal of to make a difference
+        in the projects that I work on and in the lives people I meet on this
+        journey.<br /><br />
+
+        Just as technology changed my life my life, I believe I can use use it
+        to generate much positive value out there. 😋' | translate
+        "
+      ></p>
+
+      <a href="assets/about/cv-ruan-araujo.pdf" download translate>
         <svg
           width="29"
           height="42"
@@ -44,41 +43,29 @@
       </a>
     </div>
 
-    <div id="data-container">
-      <div id="statistics">
-        <div class="statistic">
-          <span>+3</span>
-          <b>anos de experiência</b>
-        </div>
-        <div class="statistic">
-          <span>+10</span>
-          <b>cursos e certificações</b>
-        </div>
-        <div class="statistic">
-          <span>+12</span>
-          <b>projetos trabalhados</b>
-        </div>
+    <div id="trajectory-hobbies">
+      <div id="trajectory">
+        <ng-container *ngFor="let statistic of myself.experience">
+          <div class="statistic">
+            <span [countUp]="statistic.value" [options]="countOptions"></span>
+            <strong translate>{{ statistic.description }}</strong>
+          </div>
+        </ng-container>
       </div>
 
-      <div id="hobbies-container">
-        <div id="hobbies-title">
-          <img src="assets/about/shapes.svg" alt="Shape icons" />
-          <h4>hobbies</h4>
+      <div id="hobbies">
+        <div id="title">
+          <img src="assets/about/shapes.svg" alt="Shapes" />
+          <strong> hobbies </strong>
         </div>
 
-        <div id="hobbies">
-          <div class="hobbie">
-            <img src="assets/about/musics.svg" alt="Musics icon" />
-            <span>Músicas</span>
-          </div>
-          <div class="hobbie">
-            <img src="assets/about/films-series.svg" alt="Films icon" />
-            <span>Filmes e Series</span>
-          </div>
-          <div class="hobbie">
-            <img src="assets/about/games.svg" alt="Games icon" />
-            <span>Jogos</span>
-          </div>
+        <div id="list">
+          <ng-container *ngFor="let hobbie of myself.hobbies">
+            <div class="hobbie">
+              <img src="assets/about/{{ hobbie.icon }}" [alt]="hobbie.name" />
+              <span translate>{{ hobbie.name }}</span>
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>

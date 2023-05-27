@@ -9,12 +9,14 @@ import {
   NetworksComponent,
 } from './components';
 import { TypeofPipe } from './pipes';
+import { CountUpModule } from 'ngx-countup';
 
 const coreModules = [
   CommonModule,
   RouterModule,
   TranslateModule,
   NgxTypedJsModule,
+  CountUpModule,
 ];
 
 const standaloneComponents = [

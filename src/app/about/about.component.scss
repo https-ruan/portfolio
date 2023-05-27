@@ -1,99 +1,149 @@
 @import "variables";
+@import "grid";
 
 :host {
-  display: block;
+  display: flex;
+  flex-grow: 1;
 }
 
-#main {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+#about {
+  @include container();
 
-  #presentation {
+  #main {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    flex: 1;
-    max-width: 40%;
+    justify-content: space-between;
+    gap: 80px;
 
-    p {
-      margin-bottom: 60px;
-    }
-
-    .cv-download {
-      font-size: 1.25rem;
-
-      svg {
-        width: 16px;
-      }
-    }
-  }
-
-  #data-container {
-    #statistics {
+    #presentation {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 80px;
+      align-items: center;
+      max-width: 50%;
 
-      .statistic {
+      p {
+        margin-bottom: 40px;
+      }
+
+      a {
         display: flex;
         align-items: center;
-        gap: 10px;
+        color: $yellow;
+        border: 1.5px solid $yellow;
+        border-radius: 6px;
+        padding: 8px 16px;
+        font-weight: 500;
+        gap: 6px;
+        @include transition(0.4s);
 
-        span {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 60px;
-          height: 60px;
-          font-size: 1.5rem;
-          font-weight: bold;
-          color: $yellow;
-          border: 2px solid $yellow;
-          border-radius: 50%;
-          padding: 10px 12px;
+        svg {
+          width: fit-content;
+          max-height: 20px;
+
+          path {
+            @include transition(0.4s);
+          }
         }
 
-        b {
-          max-width: 160px;
+        &:hover {
+          background-color: $yellow;
+          border-color: $medium-blue;
+          color: $medium-blue;
+
+          svg path {
+            stroke: $medium-blue;
+          }
         }
       }
     }
 
-    #hobbies-container {
-      #hobbies-title {
+    #trajectory-hobbies {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      #trajectory {
         display: flex;
-        align-items: center;
-        width: 100%;
-        gap: 14px;
-        margin-bottom: 20px;
+        flex-direction: column;
+        gap: 16px;
 
-        img {
-          width: 32px;
-        }
-
-        h4 {
-          font-size: 20px;
-          font-weight: 100;
-          width: 100%;
-          padding-bottom: 4px;
-          border-bottom: 2px solid $yellow;
-        }
-      }
-
-      #hobbies {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-
-        .hobbie {
+        .statistic {
           display: flex;
           align-items: center;
           gap: 10px;
 
+          span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            padding: 10px;
+            border-radius: 50%;
+            border: 2px solid $yellow;
+            color: $yellow;
+            font-weight: 500;
+            font-size: 1.25rem;
+          }
+
+          strong {
+            width: min-content;
+          }
+
+          &:nth-child(2) {
+            align-self: center;
+          }
+
+          &:last-child {
+            align-self: flex-end;
+          }
+        }
+      }
+
+      #hobbies {
+        #title {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+
           img {
-            width: 30px;
+            max-width: 40px;
+            margin-right: 16px;
+          }
+
+          strong {
+            width: 100%;
+            font-size: 1.25rem;
+            font-weight: normal;
+            position: relative;
+            padding-bottom: 4px;
+
+            &::after {
+              content: "";
+              display: block;
+              background-color: $yellow;
+              width: 30%;
+              height: 1.5px;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+            }
+          }
+        }
+
+        #list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+
+          .hobbie {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            img {
+              max-width: 30px;
+            }
           }
         }
       }

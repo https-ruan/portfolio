@@ -9,10 +9,16 @@ export const myself = Object.freeze({
     currentJob: marker('IBM'),
     description: marker('Welcome to my portfolio! 🙂'),
   },
-  yearsExperience: 3,
-  coursesAndCertifications: 10,
-  workedProjects: 12,
-  hobbies: [marker('Musics'), marker('Films and Series'), marker('Games')],
+  experience: [
+    { description: marker('years of experience'), value: 3 },
+    { description: marker('courses and certifications'), value: 10 },
+    { description: marker('worked projects'), value: 12 },
+  ],
+  hobbies: [
+    { name: marker('Musics'), icon: 'musics.svg' },
+    { name: marker('Films and Series'), icon: 'films-series.svg' },
+    { name: marker('Games'), icon: 'games.svg' },
+  ],
 });
 
 marker('myself');

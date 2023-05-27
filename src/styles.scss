@@ -87,46 +87,50 @@ a {
   }
 }
 
-/* Grid Classes */
-$aside-padding: 80px;
-$tb-padding: 40px;
+h2 {
+  @include title;
+}
 
-.container {
-  display: block;
-  padding: $tb-padding $aside-padding;
-  max-width: 1366px;
-  margin: 0 auto;
+.aside-line {
   position: relative;
-  overflow: hidden;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
-  &-section {
-    min-height: 100vh;
+  &::before,
+  &::after {
+    content: "";
+    background-color: $yellow;
+    display: block;
+    position: absolute;
   }
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-cv {
-  align-items: center;
-}
-
-.flex-ch {
-  justify-content: center;
-}
-
-.flex-wr {
-  flex-wrap: wrap;
-}
-
-/* General Classes */
-.title {
-  font-size: 64px;
-  font-weight: normal;
 
   &::before {
-    content: "#";
-    color: $yellow;
+    width: 2px;
+    height: 100%;
+    top: 0;
+  }
+
+  &::after {
+    height: 2px;
+    width: 16%;
+    bottom: 0;
+  }
+
+  &.left {
+    padding-left: 40px;
+
+    &::before,
+    &::after {
+      left: 1px;
+    }
+  }
+
+  &.right {
+    padding-right: 40px;
+
+    &::before,
+    &::after {
+      right: 1px;
+    }
   }
 }
