@@ -90,7 +90,7 @@
             [ngTemplateOutlet]="attr_snippet"
             [ngTemplateOutletContext]="{
               attribute: attr.key,
-              quotes: (attr.value | typeof) === 'number' ? false : true,
+              quotes: attr.value | typeof : 'string',
               delay: (idx + 1) * 1700
             }"
           ></ng-container>
