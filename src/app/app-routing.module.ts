@@ -14,6 +14,23 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./about/about.component').then((c) => c.AboutComponent),
   },
+  {
+    path: marker('experience'),
+    loadComponent: () =>
+      import('./experience/experience.component').then(
+        (c) => c.ExperienceComponent
+      ),
+  },
+  {
+    path: marker('skills'),
+    loadComponent: () =>
+      import('./skills/skills.component').then((c) => c.SkillsComponent),
+  },
+  {
+    path: marker('projects'),
+    loadComponent: () =>
+      import('./projects/projects.component').then((c) => c.ProjectsComponent),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
