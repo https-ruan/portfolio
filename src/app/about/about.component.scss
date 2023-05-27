@@ -2,12 +2,21 @@
 @import "grid";
 
 :host {
-  display: flex;
-  flex-grow: 1;
+  @include flex-growing();
 }
 
 #about {
   @include container();
+
+  h2 {
+    font-size: 64px;
+    font-weight: normal;
+
+    &::before {
+      content: "#";
+      color: $yellow;
+    }
+  }
 
   #main {
     display: flex;

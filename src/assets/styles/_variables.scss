@@ -10,14 +10,3 @@ $yellow: #fff200;
 @mixin transition($duration: 0.2s, $animation-type: ease) {
   transition: $animation-type $duration;
 }
-
-// Others
-@mixin title {
-  font-size: 64px;
-  font-weight: normal;
-
-  &::before {
-    content: "#";
-    color: $yellow;
-  }
-}

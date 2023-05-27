@@ -24,3 +24,8 @@
     flex-grow: 1;
   }
 }
+
+@mixin flex-growing {
+  display: flex;
+  flex-grow: 1;
+}
