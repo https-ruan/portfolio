@@ -1,0 +1,19 @@
+<div id="header-techs">
+  <button *ngFor="let button of [0, 1, 2].fill(0); index as idx" class="tech">
+    <img src="assets/skills/javascript.svg" alt="Javascript" />
+    javascript
+  </button>
+</div>
+
+<div id="knowledge-preview">
+  <div id="knowledge">
+    <button
+      class="skill"
+      *ngFor="let button of [0, 1, 2].fill(0); index as idx"
+    >
+      function
+    </button>
+  </div>
+
+  <div id="preview"></div>
+</div>

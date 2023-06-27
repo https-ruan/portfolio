@@ -1,6 +1,6 @@
-import { marker } from '@colsen1991/ngx-translate-extract-marker';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { marker } from '@colsen1991/ngx-translate-extract-marker';
 
 export const routes: Routes = [
   {
@@ -23,8 +23,8 @@ export const routes: Routes = [
   },
   {
     path: marker('skills'),
-    loadComponent: () =>
-      import('./skills/skills.component').then((c) => c.SkillsComponent),
+    loadChildren: () =>
+      import('./skills/skills.module').then((m) => m.SkillsModule),
   },
   {
     path: marker('projects'),

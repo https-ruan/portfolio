@@ -1,0 +1,32 @@
+<section id="skills">
+  <div class="frame frame-1">
+    <span class="frame-assist"></span>
+
+    <div id="panel">
+      <div id="title-technologies">
+        <h2 translate>skills</h2>
+
+        <div id="technologies">
+          <button
+            class="tech"
+            *ngFor="let route of skillRoutes; index as idx"
+            [routerLink]="'/skills/' + route.path"
+            routerLinkActive="active"
+          >
+            <img
+              [src]="'assets/skills/' + route.path + '.svg'"
+              [alt]="route.data!['description']"
+            />
+          </button>
+        </div>
+      </div>
+
+      <h4 *ngIf="isPrimaryRoute; else routerOutlet">
+        /* Select the technology */
+      </h4>
+      <ng-template #routerOutlet>
+        <router-outlet></router-outlet>
+      </ng-template>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+@import "variables";
+@import "grid";
+
+:host {
+  @include flex-growing();
+}
+
+#skills {
+  @include container();
+
+  #panel {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 20px;
+
+    #title-technologies {
+      display: flex;
+      flex-direction: column;
+      max-width: min-content;
+
+      h2 {
+        display: inline-block;
+        border: 1.5px solid $yellow;
+        padding: 10px;
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+
+      #technologies {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex-grow: 1;
+
+        .tech {
+          @include skillTech();
+        }
+      }
+    }
+
+    h4 {
+      color: rgba($color: $light-blue, $alpha: 0.4);
+      margin: 0 auto;
+      font-size: 2rem;
+      align-self: center;
+    }
+  }
+}

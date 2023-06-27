@@ -28,7 +28,7 @@ export class AppComponent {
     private readonly _r2: Renderer2,
     private readonly _translateService: TranslateService
   ) {
-    this.dynamicTitle();
+    // this.dynamicTitle();
 
     _translateService.use(ELanguages.ptBR);
   }
