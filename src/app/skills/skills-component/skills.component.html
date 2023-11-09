@@ -1,5 +1,5 @@
 <section id="skills">
-  <div class="frame frame-1">
+  <div class="frame">
     <span class="frame-assist"></span>
 
     <div id="panel">
@@ -22,7 +22,7 @@
       </div>
 
       <h4 *ngIf="isPrimaryRoute; else routerOutlet">
-        /* Select the technology */
+        /* {{ "Select the technology" | translate }} */
       </h4>
       <ng-template #routerOutlet>
         <router-outlet></router-outlet>

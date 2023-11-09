@@ -7,7 +7,7 @@ export const routes: Routes = [
     path: '',
     loadComponent: () =>
       import('./home/home.component').then((c) => c.HomeComponent),
-    data: { pageName: marker('home') },
+    data: { pageName: marker('home'), exact: true },
   },
   {
     path: marker('about'),

@@ -11,11 +11,10 @@ export class SkillsComponent implements OnInit {
     const routeSplitted = this._router.url.split('/');
     routeSplitted.shift();
 
-    return routeSplitted.length <= 1 ? true : false;
+    return routeSplitted.length <= 1;
   }
 
   constructor(
-    private readonly _r2: Renderer2,
     private readonly _activatedRoute: ActivatedRoute,
     private readonly _router: Router
   ) {
@@ -23,15 +22,4 @@ export class SkillsComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  public toggleActiveClass(component: HTMLElement, index: number): void {
-    const activeClass = 'active';
-
-    const siblingComponents = [].slice.call(component.parentElement?.children);
-
-    this._r2.addClass(component, activeClass);
-    siblingComponents.forEach((component, i) => {
-      i !== index && this._r2.removeClass(component, activeClass);
-    });
-  }
 }

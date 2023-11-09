@@ -1,9 +1,14 @@
 <!-- Templates -->
-<ng-template #link let-routerLink="routerLink" let-name="name">
+<ng-template
+  #link
+  let-routerLink="routerLink"
+  let-name="name"
+  let-exact="exact"
+>
   <a
     [routerLink]="routerLink"
     routerLinkActive="active"
-    [routerLinkActiveOptions]="{ exact: true }"
+    [routerLinkActiveOptions]="{ exact }"
     translate
     >{{ name }}</a
   >
@@ -27,7 +32,8 @@
         [ngTemplateOutlet]="link"
         [ngTemplateOutletContext]="{
           routerLink: route.path,
-          name: route.data ? route.data['pageName'] : route.path
+          name: route.data?.['pageName'] || route.path,
+          exact: route.data?.['exact'] || false
         }"
       ></ng-container>
     </ng-container>
