@@ -1,5 +1,7 @@
 # Portfolio
 
+Layout: https://www.figma.com/file/WKqtzO6MzYacTEYf8UkGHJ/Portf%C3%B3lio---Ruan-Ara%C3%BAjo?type=design&node-id=0%3A1&mode=design&t=TKfpoqchR3ML6Zc2-1
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 
 ## Development server
