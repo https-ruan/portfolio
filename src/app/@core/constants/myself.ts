@@ -19,6 +19,12 @@ export const myself = Object.freeze({
     { name: marker('Films and Series'), icon: 'films-series.svg' },
     { name: marker('Games'), icon: 'games.svg' },
   ],
+  infos: {
+    github: 'https-ruan',
+    linkedin: 'araujo-ruan',
+    whatsapp: '5511966205477',
+    email: 'ruands200@gmail.com',
+  },
 });
 
 marker('myself');

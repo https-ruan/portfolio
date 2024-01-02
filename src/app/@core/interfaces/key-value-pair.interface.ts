@@ -1,4 +1,4 @@
-export interface IKeyValuePair<I = string, D = string> {
+export interface IKeyValuePair<I = string, N = string> {
   id: I;
-  description?: D;
+  name?: N;
 }

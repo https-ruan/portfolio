@@ -1,1 +1,74 @@
-<p>projects works!</p>
+<section id="projects">
+  <h2 translate>projects</h2>
+
+  <div id="main" class="around-line">
+    <p
+      id="description"
+      [innerHTML]="
+        'Here you‵ll find a compilation of the projects I‵ve had the privilege of developing, each one representing a unique journey and a valuable learning experience. This collection reflects not only my technical knowledge, but also my passion for creation and innovation.<br /><br />Each project listed is the result of dedication, collaboration and an ongoing commitment to excellence. By sharing these creations, I seek not only to demonstrate skills, but also to inspire others to explore new possibilities and venture into the world of innovation.<br /><br />Feel free to explore the details of each project. Each one carries with it a purpose and a distinct set of challenges that were faced and overcome.'
+          | translate
+      "
+    ></p>
+
+    <div id="projects-list">
+      <div id="showcase">
+        <div id="repos">
+          <ng-container *ngIf="repositories$ | async as repositories">
+            <a
+              *ngFor="let repository of repositories; index as idx"
+              class="repo"
+              [href]="repository.html_url"
+              target="_blank"
+            >
+              <header class="infos">
+                <span class="id">#{{ repository.id }}</span>
+
+                <div class="data-size">
+                  <div class="info">
+                    <img
+                      src="assets/projects/data.svg"
+                      [alt]="'Date' | translate"
+                    />
+                    <span>{{ repository.updated_at | date : "MM/YYYY" }}</span>
+                  </div>
+                  <div class="info">
+                    <img
+                      src="assets/projects/size.svg"
+                      [alt]="'Size' | translate"
+                    />
+                    <span>{{ repository.size }}kb</span>
+                  </div>
+                </div>
+              </header>
+
+              <strong class="name">{{ repository.name }}</strong>
+
+              <footer>
+                <div class="languages">
+                  <img
+                    *ngFor="let lang of repository.topics"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{{
+                      lang
+                    }}/{{ lang }}-original.svg"
+                    [alt]="lang"
+                  />
+                </div>
+                <a [href]="repository.html_url" target="_blank">
+                  <img
+                    src="assets/projects/external_link.svg"
+                    [alt]="'Go to repository' | translate"
+                  />
+                </a>
+              </footer>
+            </a>
+          </ng-container>
+        </div>
+
+        <div id="preview">
+          <!-- TODO: Criar repositórios destaques -->
+          <strong translate>coming soon</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

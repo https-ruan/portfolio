@@ -8,16 +8,6 @@
 #about {
   @include container();
 
-  h2 {
-    font-size: 64px;
-    font-weight: normal;
-
-    &::before {
-      content: "#";
-      color: $yellow;
-    }
-  }
-
   #main {
     display: flex;
     align-items: center;
@@ -56,11 +46,11 @@
 
         &:hover {
           background-color: $yellow;
-          border-color: $medium-blue;
-          color: $medium-blue;
+          border-color: $high-blue;
+          color: $high-blue;
 
           svg path {
-            stroke: $medium-blue;
+            stroke: $high-blue;
           }
         }
       }

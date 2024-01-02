@@ -13,8 +13,6 @@ export const getAge = (date: string) => {
 
   if (birthdate > now) {
     years--;
-    console.log(years);
-
     birthdate.setFullYear(birthdate.getFullYear() - 1);
   }
 

@@ -119,9 +119,9 @@
         @include transition(0.6s);
 
         &:hover {
-          border-color: $medium-blue;
+          border-color: $high-blue;
           background-color: $yellow;
-          color: $medium-blue;
+          color: $high-blue;
         }
       }
 
@@ -166,12 +166,12 @@
             overflow: hidden;
             background: linear-gradient(
               to right,
-              $medium-blue 20%,
-              $medium-blue 40%,
+              $high-blue 20%,
+              $high-blue 40%,
               $yellow 50%,
               $yellow 55%,
-              $medium-blue 70%,
-              $medium-blue 100%
+              $high-blue 70%,
+              $high-blue 100%
             );
             background-size: 200% auto;
             animation: shine 3s linear infinite;

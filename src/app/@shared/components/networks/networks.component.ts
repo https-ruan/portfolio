@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Constants } from '@core/constants';
 import { ELanguages } from '@core/i18n';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -11,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./networks.component.scss'],
 })
 export class NetworksComponent {
+  public myself = Constants.myself;
   public languages = ELanguages;
   public get currentLng() {
     return this._translateService.currentLang;

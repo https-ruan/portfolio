@@ -4,7 +4,9 @@
       <h3 translate>send me</h3>
 
       <a
-        href="https://api.whatsapp.com/send?phone=5511966095097&text=Ol%C3%A1%20Ruan,%20estava%20navegando%20em%20seu%20portf%C3%B3lio%20e%20decidi%20enviar%20uma%20mensagem%20:)"
+        href="https://api.whatsapp.com/send?phone={{
+          myself.infos.whatsapp
+        }}&text=Ol%C3%A1%20Ruan,%20estava%20navegando%20em%20seu%20portf%C3%B3lio%20e%20decidi%20enviar%20uma%20mensagem%20:)"
         target="_blank"
       >
         <svg
@@ -25,7 +27,7 @@
         <span translate>a message</span>
       </a>
       <a
-        href="mailto:ruands2002@gmail.com?subject=By%20portfolio"
+        href="mailto:{{ myself.infos.email }}?subject=By%20portfolio"
         target="_blank"
       >
         <span translate>an e-mail</span>
@@ -54,7 +56,10 @@
     <div class="card">
       <h3 translate>connect by</h3>
 
-      <a href="https://www.linkedin.com/in/araujo-ruan/" target="_blank">
+      <a
+        href="https://www.linkedin.com/in/{{ myself.infos.linkedin }}/"
+        target="_blank"
+      >
         <span>linkedin</span>
         <svg
           width="12"
