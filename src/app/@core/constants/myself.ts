@@ -10,7 +10,10 @@ export const myself = Object.freeze({
     description: marker('Welcome to my portfolio! 🙂'),
   },
   experience: [
-    { description: marker('years of experience'), value: 3 },
+    {
+      description: marker('years of experience'),
+      value: new Date().getFullYear() - 2021,
+    },
     { description: marker('courses and certifications'), value: 10 },
     { description: marker('worked projects'), value: 12 },
   ],
