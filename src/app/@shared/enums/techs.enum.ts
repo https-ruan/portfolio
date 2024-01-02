@@ -1,0 +1,16 @@
+export enum ETechnologies {
+  Angular = 'Angular',
+  Typescript = 'Typescript',
+  HTML = 'HTML',
+  SCSS = 'SCSS',
+  Git = 'Git',
+  Github = 'Github',
+  GraphQL = 'GraphQL',
+  Rest = 'Rest',
+  DevOps = 'DevOps',
+  UnitTest = 'UnitTest',
+  Flame = 'Flame',
+  Karma = 'Karma',
+  Jasmine = 'Jasmine',
+  Microapps = 'Microapps',
+}
