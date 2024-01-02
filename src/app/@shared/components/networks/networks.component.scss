@@ -40,6 +40,8 @@
     a,
     button {
       display: flex;
+      flex-direction: column;
+      gap: 6px;
 
       svg,
       svg path {
@@ -63,8 +65,56 @@
 
         #brazil,
         #usa {
-          position: absolute;
-          top: 160%;
+          @include transition(0.4s);
+        }
+
+        &.pt-BR {
+          svg:first-child {
+            path {
+              &:nth-child(3) {
+                fill: #009b3a;
+              }
+
+              &:nth-child(2) {
+                fill: #325191;
+              }
+
+              &:nth-child(1) {
+                fill: #fedf01;
+              }
+            }
+          }
+
+          #usa {
+            position: absolute;
+            top: 22px;
+            scale: 0;
+          }
+        }
+
+        &.en-US {
+          svg:first-child {
+            rotate: 90deg;
+            path {
+              &:nth-child(3) {
+                fill: #2a66b7;
+              }
+
+              &:nth-child(2) {
+                fill: #dc4437;
+              }
+
+              &:nth-child(1) {
+                fill: #ffffff;
+              }
+            }
+          }
+
+          #brazil {
+            position: absolute;
+            top: 22px;
+            scale: 0;
+          }
         }
       }
     }
