@@ -12,10 +12,10 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./experience.component.scss'],
 })
 export class ExperienceComponent {
-  public experiences = Constants.experiences;
+  public experiences = Constants.experience;
   public workMode = EWorkMode;
 
-  public carouselOptions: OwlOptions = {
+  public carouselOpts: OwlOptions = {
     nav: true,
     navText: [
       "<img src='assets/experience/prev.svg' />",

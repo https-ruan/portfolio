@@ -1,11 +1,11 @@
 <section id="experience">
   <h2 translate>experience</h2>
 
-  <owl-carousel-o [options]="carouselOptions">
-    <ng-template *ngFor="let experience of experiences" carouselSlide>
+  <owl-carousel-o [options]="carouselOpts">
+    <ng-template *ngFor="let job of experiences.jobs" carouselSlide>
       <header>
         <div class="infos">
-          <div *ngIf="experience.currentJob" class="current-job" translate>
+          <div *ngIf="job.currentJob" class="current-job" translate>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="150"
@@ -28,11 +28,11 @@
             <span translate>current</span>
           </div>
 
-          <strong class="title">{{ experience.enterprise }}</strong>
+          <strong class="title">{{ job.enterprise }}</strong>
 
           <div class="date">
-            {{ experience.startDate }} -
-            {{ experience.endDate || ("To present" | translate) }}
+            {{ job.startDate }} -
+            {{ job.endDate || ("To present" | translate) }}
           </div>
 
           <div class="details">
@@ -41,7 +41,7 @@
                 src="assets/experience/role.svg"
                 [alt]="'Role' | translate"
               />
-              <span>{{ experience.role }}</span>
+              <span translate>{{ job.role }}</span>
             </div>
 
             <div>
@@ -49,7 +49,7 @@
                 src="assets/experience/locale.svg"
                 [alt]="'Locale' | translate"
               />
-              <span>{{ experience.locale }}</span>
+              <span>{{ job.locale }}</span>
             </div>
 
             <div>
@@ -57,7 +57,7 @@
                 src="assets/experience/work-mode.svg"
                 [alt]="'Work Mode' | translate"
               />
-              <span [ngSwitch]="experience.mode">
+              <span [ngSwitch]="job.mode">
                 <ng-container *ngSwitchCase="workMode.OnSite">{{
                   "On-site" | translate
                 }}</ng-container>
@@ -73,22 +73,49 @@
         </div>
 
         <img
-          [src]="'assets/experience/logos/' + experience.thumbnail"
-          [alt]="experience.enterprise"
+          [src]="'assets/experience/logos/' + job.thumbnail"
+          [alt]="job.enterprise"
         />
       </header>
 
-      <p class="description">{{ experience.description | translate }}</p>
+      <p class="description">{{ job.description | translate }}</p>
 
       <footer>
         <span class="title" translate>technologies</span>
 
         <div class="techs">
-          <div class="tech" *ngFor="let tech of experience.techs">
+          <div class="tech" *ngFor="let tech of job.techs">
             {{ tech }}
           </div>
         </div>
       </footer>
+    </ng-template>
+  </owl-carousel-o>
+
+  <div class="assist-line"></div>
+
+  <owl-carousel-o [options]="carouselOpts" class="courses">
+    <ng-template *ngFor="let course of experiences.courses" carouselSlide>
+      <header>
+        <img src="assets/experience/logos/{{ course.thumbnail }}" alt="" />
+        <div class="infos">
+          <strong>{{ course.name }}</strong>
+          <span
+            *ngIf="course.hours; else dateTemplate"
+            translate
+            [translateParams]="{ hours: course.hours }"
+          >
+            #hours# hours
+          </span>
+          <ng-template #dateTemplate>
+            <span> {{ course.startDate }} - {{ course.endDate }}</span>
+          </ng-template>
+        </div>
+      </header>
+
+      <p class="description">
+        {{ course.description }}
+      </p>
     </ng-template>
   </owl-carousel-o>
 </section>
