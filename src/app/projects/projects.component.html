@@ -13,55 +13,53 @@
     <div id="projects-list">
       <div id="showcase">
         <div id="repos">
-          <ng-container *ngIf="repositories$ | async as repositories">
-            <a
-              *ngFor="let repository of repositories; index as idx"
-              class="repo"
-              [href]="repository.html_url"
-              target="_blank"
-            >
-              <header class="infos">
-                <span class="id">#{{ repository.id }}</span>
+          <a
+            *ngFor="let repository of repositories; index as idx"
+            class="repo"
+            [href]="repository.html_url"
+            target="_blank"
+          >
+            <header class="infos">
+              <span class="id">#{{ repository.id }}</span>
 
-                <div class="data-size">
-                  <div class="info">
-                    <img
-                      src="assets/projects/data.svg"
-                      [alt]="'Date' | translate"
-                    />
-                    <span>{{ repository.updated_at | date : "MM/YYYY" }}</span>
-                  </div>
-                  <div class="info">
-                    <img
-                      src="assets/projects/size.svg"
-                      [alt]="'Size' | translate"
-                    />
-                    <span>{{ repository.size }}kb</span>
-                  </div>
-                </div>
-              </header>
-
-              <strong class="name">{{ repository.name }}</strong>
-
-              <footer>
-                <div class="languages">
+              <div class="data-size">
+                <div class="info">
                   <img
-                    *ngFor="let lang of repository.topics"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{{
-                      lang
-                    }}/{{ lang }}-original.svg"
-                    [alt]="lang"
+                    src="assets/projects/data.svg"
+                    [alt]="'Date' | translate"
                   />
+                  <span>{{ repository.updated_at | date : "MM/YYYY" }}</span>
                 </div>
-                <a [href]="repository.html_url" target="_blank">
+                <div class="info">
                   <img
-                    src="assets/projects/external_link.svg"
-                    [alt]="'Go to repository' | translate"
+                    src="assets/projects/size.svg"
+                    [alt]="'Size' | translate"
                   />
-                </a>
-              </footer>
-            </a>
-          </ng-container>
+                  <span>{{ repository.size }}kb</span>
+                </div>
+              </div>
+            </header>
+
+            <strong class="name">{{ repository.name }}</strong>
+
+            <footer>
+              <div class="languages">
+                <img
+                  *ngFor="let lang of repository.topics"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{{
+                    lang
+                  }}/{{ lang }}-original.svg"
+                  [alt]="lang"
+                />
+              </div>
+              <a [href]="repository.html_url" target="_blank">
+                <img
+                  src="assets/projects/external_link.svg"
+                  [alt]="'Go to repository' | translate"
+                />
+              </a>
+            </footer>
+          </a>
         </div>
 
         <div id="preview">

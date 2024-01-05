@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { CountUpModule } from 'ngx-countup';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import {
   FooterComponent,
@@ -9,7 +10,6 @@ import {
   NetworksComponent,
 } from './components';
 import { TypeofPipe } from './pipes';
-import { CountUpModule } from 'ngx-countup';
 
 const coreModules = [
   CommonModule,

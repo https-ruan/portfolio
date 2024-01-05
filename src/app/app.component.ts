@@ -9,6 +9,7 @@ import { Title } from '@angular/platform-browser';
 import { ELanguages } from '@core/i18n';
 import { TranslateService } from '@ngx-translate/core';
 import { HeaderComponent } from '@shared/components/header/header.component';
+import { RepositoriesService } from '@shared/services/repositories.service';
 
 @Component({
   selector: 'app-root',
@@ -26,9 +27,11 @@ export class AppComponent {
   constructor(
     private readonly _titleService: Title,
     private readonly _r2: Renderer2,
-    private readonly _translateService: TranslateService
+    private readonly _translateService: TranslateService,
+    private readonly _repositoriesService: RepositoriesService
   ) {
-    // this.dynamicTitle();
+    this.dynamicTitle();
+    this._repositoriesService.getRepositories();
 
     _translateService.use(ELanguages.ptBR);
   }
