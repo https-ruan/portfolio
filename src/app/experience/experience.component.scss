@@ -275,7 +275,8 @@
 
   .assist-line {
     position: relative;
-    border: 2px solid $yellow;
+    border-top: 1px solid $yellow;
+    border-bottom: 1px solid $yellow;
     margin: 4rem 0;
 
     &::before,
@@ -288,12 +289,8 @@
       display: block;
     }
 
-    &::before {
-      left: -1px;
-    }
-
     &::after {
-      right: -1px;
+      right: 0px;
       top: -60px;
     }
   }
