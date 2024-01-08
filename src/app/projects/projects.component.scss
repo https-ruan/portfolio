@@ -1,0 +1,186 @@
+@import "variables";
+@import "grid";
+
+:host {
+  @include flex-growing();
+}
+
+#projects {
+  @include container();
+
+  #main {
+    #description {
+      margin-bottom: 0.75rem;
+    }
+
+    #projects-list {
+      display: flex;
+      gap: 2.5rem;
+
+      // TODO: Criar estilo dos filtros dos repositórios
+      /* #filters {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+
+        .filter {
+          display: flex;
+          justify-content: center;
+          padding: 0.5rem;
+          border: 2px solid $light-blue;
+          border-radius: 4px;
+          opacity: 0.5;
+          position: relative;
+          cursor: pointer;
+          @include transition(0.4s);
+
+          input {
+            all: unset;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9;
+          }
+
+          img {
+            min-width: 32px;
+            max-height: 32px;
+            object-fit: cover;
+            border-radius: 4px;
+            filter: grayscale(1);
+          }
+
+          &.active {
+            opacity: 1;
+            border-color: $yellow;
+
+            img {
+              filter: unset;
+            }
+          }
+
+          &:hover:not(.active) {
+            opacity: 0.8;
+
+            img {
+              filter: grayscale(0.5);
+            }
+          }
+        }
+      } */
+
+      #showcase {
+        display: flex;
+        gap: 1rem;
+        flex-grow: 1;
+        border: 2px solid $light-blue;
+        padding: 1.25rem;
+
+        #repos {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          gap: 2rem;
+          max-height: 50vh;
+          overflow: hidden auto;
+          padding-right: 0.5rem;
+
+          .repo {
+            padding: 0.625rem;
+            background-color: $medium-blue;
+            border-radius: 4px;
+            @include transition(0.4s);
+
+            header.infos {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 2rem;
+
+              .id {
+                font-weight: lighter;
+                font-size: 0.75rem;
+              }
+
+              .data-size {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                .info {
+                  display: flex;
+                  align-items: center;
+                  gap: 4px;
+
+                  img {
+                    width: 12px;
+                    max-height: 12px;
+                  }
+
+                  span {
+                    font-size: 0.5rem;
+                  }
+                }
+              }
+            }
+
+            strong.name {
+              text-align: center;
+              display: block;
+              font-size: 1.125rem;
+              font-weight: 500;
+              margin: 18px 0 16px 0;
+
+              &::before,
+              &::after {
+                color: $yellow;
+                font-size: 1.125rem;
+              }
+
+              &::before {
+                content: "<";
+              }
+
+              &::after {
+                content: "/>";
+                display: inline-block;
+                margin-left: 0.5rem;
+              }
+            }
+
+            footer {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .languages {
+                display: flex;
+                gap: 0.125rem;
+
+                img {
+                  width: 20px;
+                  height: 20px;
+                }
+              }
+            }
+
+            &:hover {
+              scale: 0.96;
+            }
+          }
+        }
+
+        #preview {
+          width: 100%;
+          border: 2px dashed $medium-blue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import "fonts";
+
+$white: #ffffff;
+$black: #000000;
+
+$light-blue: #8d99ae;
+$medium-blue: #3e4358;
+$high-blue: #2b2d42;
+$yellow: #fff200;
+
+@mixin transition($duration: 0.2s, $animation-type: ease) {
+  transition: $animation-type $duration;
+}
+
+@mixin skillTech {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3e4358;
+  padding: 12px 16px;
+  border-bottom: 2px solid #3e4358;
+  flex-grow: 1;
+  @include transition(0.4s);
+
+  &.active,
+  &:hover {
+    background-color: rgba($color: $yellow, $alpha: 0.2);
+    border-color: $yellow;
+  }
+}

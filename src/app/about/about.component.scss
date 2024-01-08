@@ -1,0 +1,151 @@
+@import "variables";
+@import "grid";
+
+:host {
+  @include flex-growing();
+}
+
+#about {
+  @include container();
+
+  #main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+
+    #presentation {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 50%;
+
+      p {
+        margin-bottom: 40px;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        color: $yellow;
+        border: 1.5px solid $yellow;
+        border-radius: 6px;
+        padding: 8px 16px;
+        font-weight: 500;
+        gap: 6px;
+        @include transition(0.4s);
+
+        svg {
+          width: fit-content;
+          max-height: 20px;
+
+          path {
+            @include transition(0.4s);
+          }
+        }
+
+        &:hover {
+          background-color: $yellow;
+          border-color: $high-blue;
+          color: $high-blue;
+
+          svg path {
+            stroke: $high-blue;
+          }
+        }
+      }
+    }
+
+    #trajectory-hobbies {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      #trajectory {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .statistic {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            padding: 10px;
+            border-radius: 50%;
+            border: 2px solid $yellow;
+            color: $yellow;
+            font-weight: 500;
+            font-size: 1.25rem;
+          }
+
+          strong {
+            width: min-content;
+          }
+
+          &:nth-child(2) {
+            align-self: center;
+          }
+
+          &:last-child {
+            align-self: flex-end;
+          }
+        }
+      }
+
+      #hobbies {
+        #title {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+
+          img {
+            max-width: 40px;
+            margin-right: 16px;
+          }
+
+          strong {
+            width: 100%;
+            font-size: 1.25rem;
+            font-weight: normal;
+            position: relative;
+            padding-bottom: 4px;
+
+            &::after {
+              content: "";
+              display: block;
+              background-color: $yellow;
+              width: 30%;
+              height: 1.5px;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+            }
+          }
+        }
+
+        #list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+
+          .hobbie {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            img {
+              max-width: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

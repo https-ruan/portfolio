@@ -1,0 +1,41 @@
+<!-- Templates -->
+<ng-template
+  #link
+  let-routerLink="routerLink"
+  let-name="name"
+  let-exact="exact"
+>
+  <a
+    [routerLink]="routerLink"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact }"
+    translate
+    >{{ name }}</a
+  >
+</ng-template>
+
+<header>
+  <a routerLink="/" id="logo">
+    <ngx-typed-js [strings]="['Ruan']" [typeSpeed]="100" [showCursor]="false">
+      <h1>
+        <span><</span>
+        <span class="typing"></span>
+        <span>/></span>
+      </h1>
+    </ngx-typed-js>
+  </a>
+
+  <div id="links">
+    <ng-container *ngFor="let route of routes; index as idx">
+      <ng-container
+        *ngIf="idx !== routes.length - 1"
+        [ngTemplateOutlet]="link"
+        [ngTemplateOutletContext]="{
+          routerLink: route.path,
+          name: route.data?.['pageName'] || route.path,
+          exact: route.data?.['exact'] || false
+        }"
+      ></ng-container>
+    </ng-container>
+  </div>
+</header>

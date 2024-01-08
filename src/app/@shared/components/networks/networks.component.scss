@@ -1,0 +1,122 @@
+@import "variables";
+
+@mixin line($width: 30px, $height: 1.6px) {
+  width: $width;
+  height: $height;
+  background-color: $light-blue;
+}
+
+:host {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  display: flex;
+  z-index: 999;
+}
+
+#h-line {
+  display: block;
+  @include line;
+}
+
+#main-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -9px;
+
+  #v-line {
+    display: block;
+    @include line(1.6px, 280px);
+    margin-bottom: 10px;
+  }
+
+  #networks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    a,
+    button {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      svg,
+      svg path {
+        @include transition(0.4s);
+      }
+
+      &:hover {
+        svg {
+          scale: 1.2;
+        }
+
+        &:not(#lang-selector) {
+          svg path {
+            fill: yellow;
+          }
+        }
+      }
+
+      &#lang-selector {
+        position: relative;
+
+        #brazil,
+        #usa {
+          @include transition(0.4s);
+        }
+
+        &.pt-BR {
+          svg:first-child {
+            path {
+              &:nth-child(3) {
+                fill: #009b3a;
+              }
+
+              &:nth-child(2) {
+                fill: #325191;
+              }
+
+              &:nth-child(1) {
+                fill: #fedf01;
+              }
+            }
+          }
+
+          #usa {
+            position: absolute;
+            top: 22px;
+            scale: 0;
+          }
+        }
+
+        &.en-US {
+          svg:first-child {
+            rotate: 90deg;
+            path {
+              &:nth-child(3) {
+                fill: #2a66b7;
+              }
+
+              &:nth-child(2) {
+                fill: #dc4437;
+              }
+
+              &:nth-child(1) {
+                fill: #ffffff;
+              }
+            }
+          }
+
+          #brazil {
+            position: absolute;
+            top: 22px;
+            scale: 0;
+          }
+        }
+      }
+    }
+  }
+}
