@@ -13,7 +13,85 @@ export class RepositoriesService {
 
   private _repositories: IRepository[] = [];
   public get repositories() {
-    return this._repositories;
+    return [
+      {
+        id: '639383751',
+        name: 'portfolio',
+        html_url: 'https://github.com/https-ruan/portfolio',
+        description: 'as',
+        topics: ['angularjs', 'html5', 'sass', 'typescript'],
+        size: 123,
+        language: 'Xpto',
+        languages_url: '',
+        updated_at: '',
+      },
+      {
+        id: '639383751',
+        name: 'portfolio',
+        html_url: 'https://github.com/https-ruan/portfolio',
+        description: 'as',
+        topics: ['angularjs', 'html5', 'sass', 'typescript'],
+        size: 123,
+        language: 'Xpto',
+        languages_url: '',
+        updated_at: '',
+      },
+      {
+        id: '639383751',
+        name: 'portfolio',
+        html_url: 'https://github.com/https-ruan/portfolio',
+        description: 'as',
+        topics: ['angularjs', 'html5', 'sass', 'typescript'],
+        size: 123,
+        language: 'Xpto',
+        languages_url: '',
+        updated_at: '',
+      },
+      {
+        id: '639383751',
+        name: 'portfolio',
+        html_url: 'https://github.com/https-ruan/portfolio',
+        description: 'as',
+        topics: ['angularjs', 'html5', 'sass', 'typescript'],
+        size: 123,
+        language: 'Xpto',
+        languages_url: '',
+        updated_at: '',
+      },
+      {
+        id: '639383751',
+        name: 'portfolio',
+        html_url: 'https://github.com/https-ruan/portfolio',
+        description: 'as',
+        topics: ['angularjs', 'html5', 'sass', 'typescript'],
+        size: 123,
+        language: 'Xpto',
+        languages_url: '',
+        updated_at: '',
+      },
+      {
+        id: '639383751',
+        name: 'portfolio',
+        html_url: 'https://github.com/https-ruan/portfolio',
+        description: 'as',
+        topics: ['angularjs', 'html5', 'sass', 'typescript'],
+        size: 123,
+        language: 'Xpto',
+        languages_url: '',
+        updated_at: '',
+      },
+      {
+        id: '639383751',
+        name: 'portfolio',
+        html_url: 'https://github.com/https-ruan/portfolio',
+        description: 'as',
+        topics: ['angularjs', 'html5', 'sass', 'typescript'],
+        size: 123,
+        language: 'Xpto',
+        languages_url: '',
+        updated_at: '',
+      },
+    ];
   }
   public set repositories(repos: IRepository[]) {
     this._repositories = repos;

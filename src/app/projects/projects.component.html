@@ -10,62 +10,117 @@
       "
     ></p>
 
-    <div id="projects-list">
-      <div id="showcase">
-        <div id="repos">
-          <a
-            *ngFor="let repository of repositories; index as idx"
-            class="repo"
-            [href]="repository.html_url"
-            target="_blank"
+    <div id="showcase">
+      <div id="repos">
+        <a
+          *ngFor="let repository of repositories; index as idx"
+          class="repo"
+          [href]="repository.html_url"
+          target="_blank"
+        >
+          <header class="infos">
+            <span class="id">#{{ repository.id }}</span>
+
+            <div class="data-size">
+              <div class="info">
+                <img
+                  src="assets/projects/data.svg"
+                  [alt]="'Date' | translate"
+                />
+                <span>{{ repository.updated_at | date : "MM/YYYY" }}</span>
+              </div>
+              <div class="info">
+                <img
+                  src="assets/projects/size.svg"
+                  [alt]="'Size' | translate"
+                />
+                <span>{{ repository.size }}kb</span>
+              </div>
+            </div>
+          </header>
+
+          <strong class="name">{{ repository.name }}</strong>
+
+          <footer>
+            <div class="languages">
+              <img
+                *ngFor="let lang of repository.topics"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{{
+                  lang
+                }}/{{ lang }}-original.svg"
+                [alt]="lang"
+              />
+            </div>
+            <a [href]="repository.html_url" target="_blank">
+              <img
+                src="assets/projects/external_link.svg"
+                [alt]="'Go to repository' | translate"
+              />
+            </a>
+          </footer>
+        </a>
+      </div>
+
+      <div id="preview">
+        <owl-carousel-o [options]="carouselOpts">
+          <ng-template
+            carouselSlide
+            *ngFor="let project of highlightedProjects"
           >
-            <header class="infos">
-              <span class="id">#{{ repository.id }}</span>
+            <img [src]="project.thumbnail" [alt]="project.name" />
 
-              <div class="data-size">
-                <div class="info">
-                  <img
-                    src="assets/projects/data.svg"
-                    [alt]="'Date' | translate"
-                  />
-                  <span>{{ repository.updated_at | date : "MM/YYYY" }}</span>
+            <div class="infos">
+              <header>
+                <strong>{{ project.name }}</strong>
+                <div class="links">
+                  <a
+                    [href]="project.url"
+                    target="_blank"
+                    [matTooltip]="'Visit site' | translate"
+                  >
+                    <img
+                      src="assets/projects/site.svg"
+                      [alt]="'Visit site' | translate"
+                    />
+                  </a>
+                  <a
+                    [href]="project.github"
+                    target="_blank"
+                    [matTooltip]="'Visit repository' | translate"
+                  >
+                    <img
+                      src="assets/projects/github.svg"
+                      [alt]="'Visit repository' | translate"
+                    />
+                  </a>
                 </div>
-                <div class="info">
-                  <img
-                    src="assets/projects/size.svg"
-                    [alt]="'Size' | translate"
-                  />
-                  <span>{{ repository.size }}kb</span>
+              </header>
+
+              <footer>
+                <div class="techs">
+                  <ng-template let-tech #techImg>
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{{
+                        tech
+                      }}/{{ tech }}-plain.svg"
+                      [alt]="tech"
+                    />
+                  </ng-template>
+
+                  <ng-container
+                    *ngFor="let tech of project.techs"
+                    [ngTemplateOutlet]="techImg"
+                    [ngTemplateOutletContext]="{ $implicit: tech | lowercase }"
+                  ></ng-container>
                 </div>
-              </div>
-            </header>
-
-            <strong class="name">{{ repository.name }}</strong>
-
-            <footer>
-              <div class="languages">
-                <img
-                  *ngFor="let lang of repository.topics"
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{{
-                    lang
-                  }}/{{ lang }}-original.svg"
-                  [alt]="lang"
-                />
-              </div>
-              <a [href]="repository.html_url" target="_blank">
-                <img
-                  src="assets/projects/external_link.svg"
-                  [alt]="'Go to repository' | translate"
-                />
-              </a>
-            </footer>
-          </a>
-        </div>
-
-        <div id="preview">
-          <!-- TODO: Criar repositórios destaques -->
-          <strong translate>coming soon</strong>
-        </div>
+                <p
+                  class="description"
+                  [innerHTML]="project.description | translate"
+                ></p>
+              </footer>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
       </div>
     </div>
   </div>

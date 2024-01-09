@@ -1,5 +1,6 @@
 export enum ETechnologies {
   Angular = 'Angular',
+  AngularJS = 'AngularJS',
   Typescript = 'Typescript',
   HTML = 'HTML',
   SCSS = 'SCSS',
