@@ -1,5 +1,6 @@
 export enum ETechnologies {
   Angular = 'Angular',
+  AngularJS = 'AngularJS',
   Typescript = 'Typescript',
   HTML = 'HTML',
   SCSS = 'SCSS',
@@ -8,9 +9,13 @@ export enum ETechnologies {
   GraphQL = 'GraphQL',
   Rest = 'Rest',
   DevOps = 'DevOps',
-  UnitTest = 'UnitTest',
-  Flame = 'Flame',
+  UnitTest = 'Unit Test',
+  Flame = 'Flame Design System',
   Karma = 'Karma',
   Jasmine = 'Jasmine',
   Microapps = 'Microapps',
+  MVVM = 'MVVM Design Pattern',
+  Gilab = 'Gilab',
+  JSP = 'JSP',
+  Dotnet = '.NET',
 }

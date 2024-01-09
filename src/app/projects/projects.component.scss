@@ -13,172 +13,215 @@
       margin-bottom: 0.75rem;
     }
 
-    #projects-list {
+    #showcase {
       display: flex;
-      gap: 2.5rem;
+      gap: 1rem;
+      border: 2px solid $light-blue;
+      padding: 1.25rem;
 
-      // TODO: Criar estilo dos filtros dos repositórios
-      /* #filters {
+      #repos {
         display: flex;
         flex-direction: column;
-        gap: 0.625rem;
+        width: 25%;
+        gap: 2rem;
+        max-height: 50vh;
+        overflow: hidden auto;
+        padding-right: 0.5rem;
 
-        .filter {
-          display: flex;
-          justify-content: center;
-          padding: 0.5rem;
-          border: 2px solid $light-blue;
+        .repo {
+          padding: 0.625rem;
+          background-color: $medium-blue;
           border-radius: 4px;
-          opacity: 0.5;
-          position: relative;
-          cursor: pointer;
           @include transition(0.4s);
 
-          input {
-            all: unset;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9;
-          }
+          header.infos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
 
-          img {
-            min-width: 32px;
-            max-height: 32px;
-            object-fit: cover;
-            border-radius: 4px;
-            filter: grayscale(1);
-          }
-
-          &.active {
-            opacity: 1;
-            border-color: $yellow;
-
-            img {
-              filter: unset;
+            .id {
+              font-weight: lighter;
+              font-size: 0.75rem;
             }
-          }
 
-          &:hover:not(.active) {
-            opacity: 0.8;
-
-            img {
-              filter: grayscale(0.5);
-            }
-          }
-        }
-      } */
-
-      #showcase {
-        display: flex;
-        gap: 1rem;
-        flex-grow: 1;
-        border: 2px solid $light-blue;
-        padding: 1.25rem;
-
-        #repos {
-          display: flex;
-          flex-direction: column;
-          flex-grow: 1;
-          gap: 2rem;
-          max-height: 50vh;
-          overflow: hidden auto;
-          padding-right: 0.5rem;
-
-          .repo {
-            padding: 0.625rem;
-            background-color: $medium-blue;
-            border-radius: 4px;
-            @include transition(0.4s);
-
-            header.infos {
+            .data-size {
               display: flex;
-              justify-content: space-between;
+              gap: 10px;
               align-items: center;
-              gap: 2rem;
 
-              .id {
-                font-weight: lighter;
-                font-size: 0.75rem;
-              }
-
-              .data-size {
+              .info {
                 display: flex;
-                gap: 10px;
                 align-items: center;
-
-                .info {
-                  display: flex;
-                  align-items: center;
-                  gap: 4px;
-
-                  img {
-                    width: 12px;
-                    max-height: 12px;
-                  }
-
-                  span {
-                    font-size: 0.5rem;
-                  }
-                }
-              }
-            }
-
-            strong.name {
-              text-align: center;
-              display: block;
-              font-size: 1.125rem;
-              font-weight: 500;
-              margin: 18px 0 16px 0;
-
-              &::before,
-              &::after {
-                color: $yellow;
-                font-size: 1.125rem;
-              }
-
-              &::before {
-                content: "<";
-              }
-
-              &::after {
-                content: "/>";
-                display: inline-block;
-                margin-left: 0.5rem;
-              }
-            }
-
-            footer {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-
-              .languages {
-                display: flex;
-                gap: 0.125rem;
+                gap: 4px;
 
                 img {
-                  width: 20px;
-                  height: 20px;
+                  width: 12px;
+                  max-height: 12px;
+                }
+
+                span {
+                  font-size: 0.5rem;
                 }
               }
             }
+          }
 
-            &:hover {
-              scale: 0.96;
+          strong.name {
+            text-align: center;
+            display: block;
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin: 18px 0 16px 0;
+
+            &::before,
+            &::after {
+              color: $yellow;
+              font-size: 1.125rem;
+            }
+
+            &::before {
+              content: "<";
+            }
+
+            &::after {
+              content: "/>";
+              display: inline-block;
+              margin-left: 0.5rem;
             }
           }
-        }
 
-        #preview {
-          width: 100%;
-          border: 2px dashed $medium-blue;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          opacity: 0.5;
+          footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .languages {
+              display: flex;
+              gap: 0.125rem;
+
+              img {
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+
+          &:hover {
+            scale: 0.96;
+          }
+        }
+      }
+
+      #preview {
+        position: relative;
+        width: 75%;
+        overflow: hidden;
+        border: 2px dashed $medium-blue;
+
+        ::ng-deep {
+          .owl-item {
+            height: 100%;
+            > img {
+              filter: blur(2px) brightness(0.8);
+              max-height: 50vh;
+              object-fit: cover;
+              object-position: top;
+            }
+
+            .infos {
+              position: absolute;
+              width: calc(100% - 32px);
+              height: 85%;
+              top: 16px;
+              left: 16px;
+              z-index: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+
+              header {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                strong {
+                  font-size: 2rem;
+                  font-weight: 500;
+                  display: flex;
+                  align-items: center;
+                  flex-grow: 1;
+                  gap: 20px;
+
+                  &::after {
+                    content: "";
+                    display: block;
+                    flex-grow: 1;
+                    height: 1px;
+                    margin: 0 auto;
+                    background: linear-gradient(101deg, white 0%, $yellow 100%);
+                  }
+                }
+
+                .links {
+                  display: flex;
+                  gap: 10px;
+
+                  img {
+                    max-height: 20px;
+                  }
+                }
+              }
+
+              footer {
+                display: flex;
+                gap: 3rem;
+
+                .techs {
+                  display: flex;
+                  gap: 10px;
+
+                  img {
+                    width: 40px;
+                  }
+                }
+
+                .description {
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+
+          .owl-dots {
+            margin: 0;
+            position: absolute;
+            left: 50%;
+            bottom: 16px;
+            translate: -50% 0;
+
+            .owl-dot {
+              margin: 0 2px;
+
+              span {
+                width: 50px;
+                margin: 0;
+                border-radius: 2px;
+                background-color: $light-blue;
+                @include transition(0.4s);
+
+                &:hover {
+                  background-color: $yellow;
+                }
+              }
+
+              &.active {
+                span {
+                  background-color: $yellow;
+                }
+              }
+            }
+          }
         }
       }
     }

@@ -58,15 +58,4 @@ export class AppComponent {
 
     window.requestAnimationFrame(animation);
   }
-
-  @HostListener('window:scroll', ['$event']) private onScroll(e: Event): void {
-    const window = (e.target as Document).defaultView as Window;
-    const header = this.header.nativeElement as HTMLElement;
-
-    if (window.scrollY > header.offsetHeight) {
-      this._r2.addClass(header, 'show-button');
-    } else {
-      this._r2.removeClass(header, 'show-button');
-    }
-  }
 }

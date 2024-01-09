@@ -1,6 +1,14 @@
 <section id="experience">
   <h2 translate>experience</h2>
 
+  <p class="description" translate>
+    Below, you'll find my professional experiences and the courses I've
+    completed throughout my journey. These experiences have provided me with
+    practical and theoretical knowledge, enriching my professional background.
+    Keep exploring to learn more about the challenges faced, projects developed,
+    and the skills acquired during these periods.
+  </p>
+
   <owl-carousel-o [options]="carouselOpts">
     <ng-template *ngFor="let job of experiences.jobs" carouselSlide>
       <header>
@@ -99,7 +107,7 @@
       <header>
         <img src="assets/experience/logos/{{ course.thumbnail }}" alt="" />
         <div class="infos">
-          <strong>{{ course.name }}</strong>
+          <strong translate>{{ course.name }}</strong>
           <span
             *ngIf="course.hours; else dateTemplate"
             translate
@@ -108,14 +116,12 @@
             #hours# hours
           </span>
           <ng-template #dateTemplate>
-            <span> {{ course.startDate }} - {{ course.endDate }}</span>
+            <span> {{ course.date }}</span>
           </ng-template>
         </div>
       </header>
 
-      <p class="description">
-        {{ course.description }}
-      </p>
+      <p class="description" [innerHTML]="course.description | translate"></p>
     </ng-template>
   </owl-carousel-o>
 </section>
