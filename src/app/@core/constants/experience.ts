@@ -1,14 +1,14 @@
 import { marker } from '@colsen1991/ngx-translate-extract-marker';
+import { IExperiences } from '@core/interfaces';
 import { EWorkMode, ETechnologies } from '@shared/enums';
 
-export const experience = Object.freeze({
+export const experience: IExperiences = Object.freeze({
   jobs: [
     {
       enterprise: 'IBM Brazil',
       thumbnail: 'ibm.svg',
       currentJob: true,
       startDate: '09/2022',
-      endDate: null,
       role: marker('Application Developer'),
       locale: 'São Paulo - SP',
       mode: EWorkMode.Hybrid,
@@ -30,6 +30,7 @@ export const experience = Object.freeze({
         ETechnologies.Karma,
         ETechnologies.Jasmine,
         ETechnologies.Microapps,
+        ETechnologies.MVVM,
       ],
     },
     {
@@ -52,29 +53,88 @@ export const experience = Object.freeze({
         ETechnologies.Git,
         ETechnologies.Github,
         ETechnologies.Rest,
+        ETechnologies.Gilab,
+        ETechnologies.JSP,
+        ETechnologies.Dotnet,
       ],
     },
   ],
   courses: [
     {
-      name: marker('Análise e Dev. de Sistemas'),
+      name: marker('Systems Analysis and Development'),
       description: marker(
-        'Lorem ipsum dolor sit amet consectetur. Id tellus ultrices viverra massa ut eu placerat enim. Quis laoreet varius fringilla massa. Iaculis tristique diam sagittis fames arcu. Maecenas molestie enim mauris tortor est in facilisis. Ut et sit proin risus nibh quam nisi. Imperdiet platea tellus egestas placerat ut bibendum sed.At ullamcorper pellentesque vehicula sagittis scelerisque tellus consequat curabitur. Ipsum arcu ligula eget a diam turpis sollicitudin. Tempor convallis et lectus placerat nulla lectus dolor nisl. Facilisi vitae quisque consectetur quis condimentum mauris dictumst congue vitae. Cursus pulvinar ut viverra morbi mauris fusce.'
+        `The course offers subjects aimed at Full Stack training, with subjects aimed at presenting concepts for Front-End and Back-End development.<br /><br />The main duties of the Systems Analysis and Development Technologist are to analyze, design, document, specify, test, deploy and maintain computer systems.`
       ),
       thumbnail: 'uninove.png',
-      startDate: '01/2020',
-      endDate: '06/2022',
-      hours: null,
+      date: '01/2020 - 06/2022',
     },
     {
-      name: marker('Análise e Dev. de Sistemas'),
-      description: marker(
-        'Lorem ipsum dolor sit amet consectetur. Id tellus ultrices viverra massa ut eu placerat enim. Quis laoreet varius fringilla massa. Iaculis tristique diam sagittis fames arcu. Maecenas molestie enim mauris tortor est in facilisis. Ut et sit proin risus nibh quam nisi. Imperdiet platea tellus egestas placerat ut bibendum sed.At ullamcorper pellentesque vehicula sagittis scelerisque tellus consequat curabitur. Ipsum arcu ligula eget a diam turpis sollicitudin. Tempor convallis et lectus placerat nulla lectus dolor nisl. Facilisi vitae quisque consectetur quis condimentum mauris dictumst congue vitae. Cursus pulvinar ut viverra morbi mauris fusce.'
+      name: marker(
+        'Angular 13 training - Getting started by creating 7 projects'
       ),
-      thumbnail: 'uninove.png',
-      startDate: '01/2020',
-      endDate: '06/2022',
-      hours: null,
+      description: marker(``),
+      thumbnail: 'udemy.png',
+      hours: 11,
+    },
+    {
+      name: marker('Understanding TypeScript'),
+      description: marker(``),
+      thumbnail: 'udemy.png',
+      hours: 11.5,
+    },
+    {
+      name: marker('Angular 2 Course (v17+) Typescript from Basic to Advanced'),
+      description: marker(``),
+      thumbnail: 'udemy.png',
+      hours: 27,
+    },
+    {
+      name: marker('IBM Garage Foundation'),
+      description: marker(``),
+      thumbnail: 'ibm.svg',
+      date: '11/2022',
+    },
+    {
+      name: marker('IBM Garage Essentials'),
+      description: marker(``),
+      thumbnail: 'ibm.svg',
+      date: '11/2022',
+    },
+    {
+      name: marker('IBM Consulting Way'),
+      description: marker(``),
+      thumbnail: 'ibm.svg',
+      date: '12/2022',
+    },
+    {
+      name: marker('IBM Cloud Essentials'),
+      description: marker(``),
+      thumbnail: 'ibm.svg',
+      date: '02/2023',
+    },
+    {
+      name: marker('Enterprise Design Thinking Practitioner'),
+      description: marker(``),
+      thumbnail: 'ibm.svg',
+      date: '02/2023',
+    },
+    {
+      name: marker('Scrum Foundation Professional Certification SFPC™'),
+      description: marker(``),
+      thumbnail: 'certiprof.png',
+      date: '03/2023',
+    },
+    {
+      name: marker('IBM Agile Explorer'),
+      description: marker(``),
+      thumbnail: 'ibm.svg',
+      date: '03/2023',
+    },
+    {
+      name: marker('IBM Cloud Core'),
+      description: marker(``),
+      thumbnail: 'ibm.svg',
+      date: '03/2023',
     },
   ],
 });
